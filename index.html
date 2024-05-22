@@ -169,7 +169,7 @@ background: #006699;
 	</div>
 	<div style="float:right; width: 67%; color: #E0E0E0; padding-right: 5%; padding-left: 1%; margin-top: 0px; ">
 	<h2 style="color: #F0F0F0; font-size:150%; ">DATA ANALYTICS</h2>
-	<p>Welcome to <b>KBarlowUSA's Data Analytics Roadmap for Local Government</b> - which is a directory to consolidate my research on innovative data analytics efforts across the US. Use the buttons to the left to toggle on and off by location type. Use the Feedback button at the top to provide us feedback or more ideas.&nbsp;&nbsp;<a style="color:white; font-size: 90%;" href="#directory">[view in list form]</a></p></div>
+	<p>Welcome to my <b>Data Analytics Roadmap</b> - which is a directory to consolidate my research on innovative data analytics efforts across the US. Use the buttons to the left to toggle on and off by location type. Use the Feedback button at the top to provide us feedback or more ideas.&nbsp;&nbsp;<a style="color:white; font-size: 90%;" href="#directory">[view in list form]</a></p></div>
 </div>
 
 <br clear="all">
@@ -261,8 +261,8 @@ dogpark.properties.id = i;
 // Wait until the map has finished loading.
 map.on('load', () => {
 
-	// Add Pet Friendly Restaurants data 
-	map.addSource('pet friendly restaurants', {
+	// Add City Government data 
+	map.addSource('city government', {
 		'type': 'geojson',
 		'data': food
 	});
@@ -270,9 +270,9 @@ map.on('load', () => {
 	buildLocationList(food,"food");
 		
 	map.addLayer({
-		'id': 'pet friendly restaurants',
+		'id': 'city government',
 		'type': 'circle',
-		'source': 'pet friendly restaurants',
+		'source': 'city government',
 		'layout': {
 		// Make the layer visible by default.
 		'visibility': 'visible',
@@ -463,12 +463,12 @@ map.on('load', () => {
 // After the last frame rendered before the map enters an "idle" state.
 map.on('idle', () => {
 // If these two layers were not added to the map, abort
-if (!map.getLayer('pet friendly restaurants') || !map.getLayer('pet services')) {
+if (!map.getLayer('city government') || !map.getLayer('pet services')) {
 return;
 }
  
 // Enumerate ids of the layers.
-const toggleableLayerIds = ['pet friendly restaurants','dog friendly parks','pet services'];
+const toggleableLayerIds = ['city government','dog friendly parks','pet services'];
  
 // Set up the corresponding toggle button for each layer.
 for (const id of toggleableLayerIds) {
@@ -482,7 +482,7 @@ const link = document.createElement('a');
 link.id = id;
 link.href = '#';
 
-/*  if (id == 'pet friendly restaurants') { num = food_ct; }
+/*  if (id == 'city government') { num = food_ct; }
 	if (id == 'dog friendly parks') { num = dogparks_ct; }
 	if (id == 'pet services') { num = petsvcs_ct; } 
 	link.textContent = id + ' (' + num + ')';  */
@@ -524,7 +524,7 @@ layers.appendChild(link);
   map.on('click', (event) => {
   // If the user clicked on one of your markers, get its information.
   const features = map.queryRenderedFeatures(event.point, {
-    layers: ['pet friendly restaurants','pet services', 'dog friendly parks'] // replace with your layer name
+    layers: ['city government','pet services', 'dog friendly parks'] // replace with your layer name
   });
   if (!features.length) {
     return;
