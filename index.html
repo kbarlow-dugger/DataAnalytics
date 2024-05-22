@@ -327,42 +327,42 @@ map.on('load', () => {
 		}
 	});
 	
-	map.loadImage(
-		'https://kbarlow-dugger.github.io/PetFriendlyRoadmap/dugger-icon.png',
-		(error, image) => {
-		if (error) throw error;
+//	map.loadImage(
+//		'https://kbarlow-dugger.github.io/PetFriendlyRoadmap/dugger-icon.png',
+//		(error, image) => {
+//		if (error) throw error;
  
 			// Add the image to the map style.
-			map.addImage('cat', image);
+//			map.addImage('cat', image);
  
 			// Add a data source containing one point feature.
-			map.addSource('point', {
-				'type': 'geojson',
-				'data': {
-				'type': 'FeatureCollection',
-				'features': [
-				{
-				'type': 'Feature',
-				'geometry': {
-				'type': 'Point',
-			'coordinates': [-77.036674, 38.897606]
-			}
-			}
-			]
-			}
-		});
+//			map.addSource('point', {
+//				'type': 'geojson',
+//				'data': {
+//				'type': 'FeatureCollection',
+//				'features': [
+//				{
+//				'type': 'Feature',
+//				'geometry': {
+//				'type': 'Point',
+//			'coordinates': [-77.036674, 38.897606]
+//			}
+//			}
+//			]
+//			}
+//		});
  
 		// Add a layer to use the image to represent the data.
-		map.addLayer({
-			'id': 'points',
-			'type': 'symbol',
-			'source': 'point', // reference the data source
-			'layout': {
-			'icon-image': 'cat', // reference the image
-			'icon-size': 0.6
-			}
-		});
-	});
+//		map.addLayer({
+//			'id': 'points',
+//			'type': 'symbol',
+//			'source': 'point', // reference the data source
+//			'layout': {
+//			'icon-image': 'cat', // reference the image
+//			'icon-size': 0.6
+//			}
+//		});
+//	});
 	
 	function buildLocationList(stores, parm) {
 	for (const store of stores.features) {
