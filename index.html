@@ -537,7 +537,7 @@ layers.appendChild(link);
   
   /* removed use by lat long of properties.geometry.coordinates[1] and [0] */  
   .setHTML(
-	'<div style="padding-bottom: 8px;"></div><div style="padding: 10px 10px 10px 10px; background-color:#efefee; font-size: 140%;"><strong>' + feature.properties.name + '</strong></div><div style="font-size:140%; padding-top:10px;">' + feature.properties.address + '</div><div><a target="_new" href="https://' + feature.properties.address + '">view in google maps</div>'
+	'<div style="padding-bottom: 8px;"></div><div style="padding: 10px 10px 10px 10px; background-color:#efefee; font-size: 140%;"><strong>' + feature.properties.name + '</strong></div><div style="font-size:140%; padding-top:10px;">' + feature.properties.address + '</div><div><a target="_new" href="' + feature.properties.address + '">view in google maps</div>'
   )
   .addTo(map);
 
