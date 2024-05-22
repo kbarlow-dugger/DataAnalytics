@@ -203,7 +203,7 @@ const food =
 
 {'type': 'FeatureCollection','features': [
 
-{'type': 'Feature','geometry': {'type': 'Point','coordinates': [-84.512016, 39.103119]},'properties': {'name': 'Ronald Reagan Dog-Friendly Pizza','phone': '2022347336','address': '1471 P St NW','city': 'Washington','country': 'United States','category': 'Pizza','postalCode': '20005','state': 'D.C.'}},
+{'type': 'Feature','geometry': {'type': 'Point','coordinates': [-84.512016, 39.103119]},'properties': {'name': 'Cincy Insights','phone': '','address': 'https://insights.cincinnati-oh.gov/', 'city': 'Cincinnati', 'country': 'United States','category': 'Data','postalCode': '','state': 'OH'}},
 
 {'type': 'Feature','geometry': {'type': 'Point','coordinates': [-77.049766, 38.900772]},'properties': {'name': 'Abe Lincoln Burgers & Bones','phone': '2025078357','address': '2221 I St NW','city': 'Washington','country': 'United States','category': 'Restaurant','postalCode': '20037','state': 'D.C.'}},
 
@@ -539,8 +539,11 @@ layers.appendChild(link);
   .setHTML(
 	'<div style="padding-bottom: 8px;"></div><div style="padding: 10px 10px 10px 10px; background-color:#efefee; font-size: 140%;"><strong>' + feature.properties.name + '</strong></div><div style="font-size:140%; padding-top:10px;">' + feature.properties.address + '</div><div><a target="_new" href="https://www.google.com/maps/place/' + feature.properties.address + '+' + feature.properties.city + '+' + feature.properties.state + '+' + feature.properties.postalCode + '">view in google maps</div>'
   )
-  
   .addTo(map);
+
+//   .setHTML(
+// 	'<div style="padding-bottom: 8px;"></div><div style="padding: 10px 10px 10px 10px; background-color:#efefee; font-size: 140%;"><strong>' + feature.properties.name + '</strong></div><div style="font-size:140%; padding-top:10px;">' + feature.properties.address + '</div><div><a target="_new" href="https://www.google.com/maps/place/' + feature.properties.address + '+' + feature.properties.city + '+' + feature.properties.state + '+' + feature.properties.postalCode + '">view in google maps</div>'
+//   )  
   
 });
 
