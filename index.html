@@ -155,11 +155,11 @@ background: #006699;
 
 <div class="header">
   <img src="imgs/hotel-indigo.jpg" align="left" height="70px" border="0" style="padding:0 10px; 10px 10px;">
-  <a class="logo" href="http://www.duggerdinners.com" target="_top">Data Analytics Roadmap</a>
+  <a class="logo" href="https://tinyurl.com/KB-DataPage" target="_top">Data Analytics Roadmap</a>
   <div class="header-right">
   <!--  <a class="active" href="#home">Home</a>  -->
     <a class="active" href="mailto:kbarlowusa@gmail.com?subject=Data Analytics Roadmap">Feedback</a>
-	<a href="https://tinyurl.com/KB-DataPage" style="color:#006699;">Written by @KBarlowUSA</a>
+	<a href="https://tinyurl.com/KB-DataPage" style="color:#006699;">Managed by @KBarlowUSA</a>
   </div>
 </div>
 
@@ -193,7 +193,7 @@ const map = new mapboxgl.Map({
 container: 'map',
 style: 'mapbox://styles/mapbox/light-v10',
 zoom: 4,
-center: [-95.995102,41.257160]
+center: [-96.581679,40.806862]
 });
 
 map.addControl(new mapboxgl.NavigationControl());
@@ -205,7 +205,7 @@ const food =
 
 {'type': 'Feature','geometry': {'type': 'Point','coordinates': [-84.512016, 39.103119]},'properties': {'name': 'Cincy Insights','phone': '','address': 'https://insights.cincinnati-oh.gov/', 'city': 'Cincinnati', 'country': 'United States','category': 'Has a significant data portal.','postalCode': '','state': 'OH'}},
 
-{'type': 'Feature','geometry': {'type': 'Point','coordinates': [-77.049766, 38.900772]},'properties': {'name': 'Abe Lincoln Burgers & Bones','phone': '2025078357','address': '2221 I St NW','city': 'Washington','country': 'United States','category': 'Restaurant','postalCode': '20037','state': 'D.C.'}},
+{'type': 'Feature','geometry': {'type': 'Point','coordinates': [-83.926453, 35.964668]},'properties': {'name': 'TN Municipal Benchmark Report','phone': '','address': 'https://public.tableau.com/app/profile/kenneth.barlow/viz/TNMuniBenchmarkReport/HOME', 'city': 'University of Tennesse-Knoxville','country': 'United States','category': 'A data viz that I produced showing how city benchmark data can be produced using Tableau.','postalCode': '','state': 'TN'}},
 
 {'type': 'Feature','geometry': {'type': 'Point','coordinates': [-77.043929, 38.910525]},'properties': {'name': 'Jefferson and Sons Deli','phone': '2023879338','address': '1512 Connecticut Ave NW','city': 'Washington','country': 'United States','category': 'Restaurant','postalCode': '20036','state': 'D.C.' }}, 
 
@@ -537,7 +537,7 @@ layers.appendChild(link);
   
   /* removed use by lat long of properties.geometry.coordinates[1] and [0] */  
   .setHTML(
-	'<div style="padding-bottom: 8px;"></div><div style="padding: 10px 10px 10px 10px; background-color:#efefee; font-size: 140%;"><strong>' + feature.properties.name + '</strong></div><div style="font-size:140%; padding-top:10px;">' + feature.properties.category + '</div><div><a target="_new" href="' + feature.properties.address + '">WEBSITE</div>'
+	'<div style="padding-bottom: 8px;"></div><div style="padding: 10px 10px 10px 10px; background-color:#efefee; font-size: 140%;"><strong>' + feature.properties.name + '</strong></div><div style="font-size:120%; padding-top:10px;">' + feature.properties.category + '</div><div><a target="_new" href="' + feature.properties.address + '">WEBSITE</div>'
   )
   .addTo(map);
 
