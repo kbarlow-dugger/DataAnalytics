@@ -203,7 +203,7 @@ const food =
 
 {'type': 'FeatureCollection','features': [
 
-{'type': 'Feature','geometry': {'type': 'Point','coordinates': [-84.512016, 39.103119]},'properties': {'name': 'Cincy Insights','phone': '','address': 'https://insights.cincinnati-oh.gov/', 'city': 'Cincinnati', 'country': 'United States','category': 'Data','postalCode': '','state': 'OH'}},
+{'type': 'Feature','geometry': {'type': 'Point','coordinates': [-84.512016, 39.103119]},'properties': {'name': 'Cincy Insights','phone': '','address': 'https://insights.cincinnati-oh.gov/', 'city': 'Cincinnati', 'country': 'United States','category': 'Has a significant data portal.','postalCode': '','state': 'OH'}},
 
 {'type': 'Feature','geometry': {'type': 'Point','coordinates': [-77.049766, 38.900772]},'properties': {'name': 'Abe Lincoln Burgers & Bones','phone': '2025078357','address': '2221 I St NW','city': 'Washington','country': 'United States','category': 'Restaurant','postalCode': '20037','state': 'D.C.'}},
 
@@ -537,7 +537,7 @@ layers.appendChild(link);
   
   /* removed use by lat long of properties.geometry.coordinates[1] and [0] */  
   .setHTML(
-	'<div style="padding-bottom: 8px;"></div><div style="padding: 10px 10px 10px 10px; background-color:#efefee; font-size: 140%;"><strong>' + feature.properties.name + '</strong></div><div style="font-size:140%; padding-top:10px;">' + feature.properties.address + '</div><div><a target="_new" href="' + feature.properties.address + '">view in google maps</div>'
+	'<div style="padding-bottom: 8px;"></div><div style="padding: 10px 10px 10px 10px; background-color:#efefee; font-size: 140%;"><strong>' + feature.properties.name + '</strong></div><div style="font-size:140%; padding-top:10px;">' + feature.properties.category + '</div><div><a target="_new" href="' + feature.properties.address + '">WEBSITE</div>'
   )
   .addTo(map);
 
