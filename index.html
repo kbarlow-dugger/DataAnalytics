@@ -283,8 +283,8 @@ map.on('load', () => {
 		}
 	});
  
-	// Add the Pet Services items 
-	map.addSource('pet services', {
+	// Add the Other Industries items 
+	map.addSource('other industries', {
 		'type': 'geojson',
 		'data': petsvcs
 	});
@@ -292,9 +292,9 @@ map.on('load', () => {
 	buildLocationList2(petsvcs,"services");
 	
 	map.addLayer({
-		'id': 'pet services',
+		'id': 'other industries',
 		'type': 'circle',
-		'source': 'pet services',
+		'source': 'other industries',
 		'layout': {
 		// Make the layer visible by default.
 		'visibility': 'visible',
@@ -305,8 +305,8 @@ map.on('load', () => {
 		}
 	});
 
-	// Add the Dog Friendly Parks 
-	map.addSource('dog friendly parks', {
+	// Add the County Government Offices 
+	map.addSource('county government', {
 		'type': 'geojson',
 		'data': dogparks
 	});
@@ -314,9 +314,9 @@ map.on('load', () => {
 	buildLocationList3(dogparks,"parks");
 	
 	map.addLayer({
-		'id': 'dog friendly parks',
+		'id': 'county government',
 		'type': 'circle',
-		'source': 'dog friendly parks',
+		'source': 'county government',
 		'layout': {
 		// Make the layer visible by default.
 		'visibility': 'visible',
@@ -463,12 +463,12 @@ map.on('load', () => {
 // After the last frame rendered before the map enters an "idle" state.
 map.on('idle', () => {
 // If these two layers were not added to the map, abort
-if (!map.getLayer('city government') || !map.getLayer('pet services')) {
+if (!map.getLayer('city government') || !map.getLayer('other industries')) {
 return;
 }
  
 // Enumerate ids of the layers.
-const toggleableLayerIds = ['city government','dog friendly parks','pet services'];
+const toggleableLayerIds = ['city government','county government','other industries'];
  
 // Set up the corresponding toggle button for each layer.
 for (const id of toggleableLayerIds) {
@@ -483,8 +483,8 @@ link.id = id;
 link.href = '#';
 
 /*  if (id == 'city government') { num = food_ct; }
-	if (id == 'dog friendly parks') { num = dogparks_ct; }
-	if (id == 'pet services') { num = petsvcs_ct; } 
+	if (id == 'county government') { num = dogparks_ct; }
+	if (id == 'other industries') { num = petsvcs_ct; } 
 	link.textContent = id + ' (' + num + ')';  */
  
 link.textContent = id;
@@ -524,7 +524,7 @@ layers.appendChild(link);
   map.on('click', (event) => {
   // If the user clicked on one of your markers, get its information.
   const features = map.queryRenderedFeatures(event.point, {
-    layers: ['city government','pet services', 'dog friendly parks'] // replace with your layer name
+    layers: ['city government','other industries', 'county government'] // replace with your layer name
   });
   if (!features.length) {
     return;
