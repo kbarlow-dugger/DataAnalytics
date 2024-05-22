@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KBarlow Data Analytics Landing Page</title>
+  <style>
+    body {
+      font-family: Tahoma, Geneva, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    p {
+      color: #666;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Game Week Prep Information Page</h1>
+  <img src="https://duggerpawcast.com/wp-content/uploads/2024/03/sports-analytics-photo-card.png" height="200" align="right" hspace="15"><p>There are 3 plays simulated at the moment. They are:
+  <ul>
+  <li><strong>Q1(4:32)</strong> Pass to Okonkwo (2nd longest play)</li>
+  <li><strong>Q1(5:13)</strong> Short pass to Henry (3rd longest play)</li>
+  <li><strong>Q2(7:46)</strong> TD pass to Okwonko (look for “TD” in list)</li>
+  </ul>
+  </p>
+<p>Just click on the bar to the right of the play info - and the simulated animation of that play will appear in this window.</p>
+<h2>Credits</h2>
+<p>Credit to Ammar Alhaj Ali <a target="_new" href=https://www.kaggle.com/code/ammarnassanalhajali/nfl-big-data-bowl-2021-animating-players/">(link)</a> for the player animation script using Plotly Express. I modified it for the look-and-feel, to add new football play meta data, and removed the SQL (but used those concepts in Tableau).</p>
+<hr>
+<p>For the overall report, I am using 2022 data that was made available by the NFL for the 2024 NFL Big Data Bowl. The player tracking data for 2022 is focused on tackles, however, not the entire play. But while I can generate animations for each of the plays easily, it doesn't give a complete enough view of the entire play. And I couldn't find a great source for that player tracking data online.</p>
+<p>Thus, I decided to use a few sample plays from the 2021 NFL Big Data contest (2018 game data) because the plays are complete. And, of course, I would just analyze plays from that year's NFL contest, but no, the plays included for that contest are all pass plays. Thus, it doesn't provide as great game prep exercise as does the 2022 game data provided for the 2024 NFL Big Data Bowl.</p> 
+<p><a target="_new" href="https://operations.nfl.com/gameday/analytics/big-data-bowl">Visit this page on the NFL website</a> for more information on the NFL Big Data Bowls.</p>
+</div>
+
+</body>
+</html>
