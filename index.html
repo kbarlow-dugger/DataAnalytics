@@ -178,7 +178,10 @@ background: #006699;
   </div>
 </div>
 
-<a name="directory"><h2 style="padding-left: 10px;">City Government</h2></a>
+<a name="directory">
+<h2 style="padding-left: 10px;">Gov Best in Class</h2></a>
+<div id="listings" class="listings"></div>
+<h2 style="padding-left: 10px;">City Government</h2></a>
 <div id="listings" class="listings"></div>
 <h2 style="padding-left: 10px;">County Government</h2>
 <div id="listings_3" class="listings"></div>
@@ -218,6 +221,28 @@ const food =
 */
 food.features.forEach((foodplace, i) => {
 foodplace.properties.id = i;
+});
+
+const best_ct = 3;
+const best = 
+
+{'type': 'FeatureCollection','features': [
+
+{'type': 'Feature','geometry': {'type': 'Point','coordinates': [-84.512016, 39.103119]},'properties': {'name': 'Cincy Insights','phone': '','address': 'https://insights.cincinnati-oh.gov/', 'city': 'Cincinnati', 'country': 'United States','category': 'Office of Performance & Data Analytics - 11 major categories in Data Portal','postalCode': '','state': 'OH'}},
+
+{'type': 'Feature','geometry': {'type': 'Point','coordinates': [-83.926453, 35.964668]},'properties': {'name': 'TN Municipal Benchmark Report','phone': '','address': 'https://public.tableau.com/app/profile/kenneth.barlow/viz/TNMuniBenchmarkReport/HOME', 'city': 'University of Tennesse-Knoxville','country': 'United States','category': 'A data viz that I produced showing how city benchmark data can be presented more effectively using Tableau.','postalCode': '','state': 'TN'}},
+
+ {'type': 'Feature','geometry': {'type': 'Point','coordinates': [-121.275604, 37.961632]},'properties': {'name': 'City of Stockton OPDA','phone': '2023879338','address': 'https://data.stocktonca.gov','city': 'Stockton','country': 'United States','category': 'Promote more than 11 datasets. Best feature is a one-page strategic plan w/ metrics.','postalCode': '','state': 'CA' }}, 
+
+]};
+
+/**
+* Assign a unique id to each store. You'll use this `id`
+* later to associate each point on the map with a listing
+* in the sidebar.
+*/
+best.features.forEach((bestplace, i) => {
+bestplace.properties.id = i;
 });
 
 const petsvcs_ct = 2;
@@ -270,7 +295,7 @@ map.on('load', () => {
 	});
 
 	buildLocationList(food,"food");
-		
+
 	map.addLayer({
 		'id': 'city government',
 		'type': 'circle',
@@ -280,8 +305,30 @@ map.on('load', () => {
 		'visibility': 'visible',
 		},
 		'paint': {
-		'circle-radius': 13,
+		'circle-radius': 12,
 		'circle-color': 'rgba(0,133,62,1)'
+		}
+	});
+ 
+	// Add Best in Class data 
+	map.addSource('best in class', {
+		'type': 'geojson',
+		'data': best
+	});
+
+	buildLocationList(best,"best");
+		
+	map.addLayer({
+		'id': 'best in class',
+		'type': 'circle',
+		'source': 'best in class',
+		'layout': {
+		// Make the layer visible by default.
+		'visibility': 'visible',
+		},
+		'paint': {
+		'circle-radius': 15,
+		'circle-color': 'rgba(0,66,99,1)'
 		}
 	});
  
@@ -302,7 +349,7 @@ map.on('load', () => {
 		'visibility': 'visible',
 		},
 		'paint': {
-		'circle-radius': 13,
+		'circle-radius': 12,
 		'circle-color': 'rgba(61,114,196,1)'
 		}
 	});
@@ -324,7 +371,7 @@ map.on('load', () => {
 		'visibility': 'visible',
 		},
 		'paint': {
-		'circle-radius': 13,
+		'circle-radius': 12,
 		'circle-color': 'rgba(127,0,0,1)'		
 		}
 	});
@@ -470,7 +517,7 @@ return;
 }
  
 // Enumerate ids of the layers.
-const toggleableLayerIds = ['city government','county government','other industries'];
+const toggleableLayerIds = ['best in class', 'city government','county government','other industries'];
  
 // Set up the corresponding toggle button for each layer.
 for (const id of toggleableLayerIds) {
@@ -527,7 +574,7 @@ layers.appendChild(link);
   map.on('click', (event) => {
   // If the user clicked on one of your markers, get its information.
   const features = map.queryRenderedFeatures(event.point, {
-    layers: ['city government','other industries', 'county government'] // replace with your layer name
+    layers: ['best in class', 'city government','other industries', 'county government'] // replace with your layer name
   });
   if (!features.length) {
     return;
