@@ -180,7 +180,7 @@ background: #006699;
 
 <a name="directory">
 <h2 style="padding-left: 10px;">Gov Best in Class</h2></a>
-<div id="listings" class="listings"></div>
+<div id="listings_1a" class="listings"></div>
 <h2 style="padding-left: 10px;">City Government</h2></a>
 <div id="listings" class="listings"></div>
 <h2 style="padding-left: 10px;">County Government</h2>
@@ -310,7 +310,7 @@ map.on('load', () => {
 		'data': best
 	});
 
-	buildLocationList(best,"best");
+	buildLocationList1a(best,"best");
 		
 	map.addLayer({
 		'id': 'best in class',
@@ -445,6 +445,34 @@ map.on('load', () => {
 
 	}}; /* end of buildLocation List function */
 	
+	function buildLocationList1a(stores, num) {
+	for (const store of stores.features) {
+	/* Add a new listing section to bottom of the page. */
+	const listings_1a = document.getElementById('listings_1a');
+	const listing = listings_1a.appendChild(document.createElement('div'));
+	/* Assign a unique `id` and class to each item in the listing. */
+	listing.id = `listing-${store.properties.id}`;
+	listing.className = 'item';
+
+	/* Add details to the individual listing. */
+	const details = listing.appendChild(document.createElement('div'));
+	details.innerHTML = `${store.properties.name}`;
+	details.style.fontWeight = '800';
+	details.style.paddingBottom = '3px';	
+	if (store.properties.category) { details.innerHTML += ` (${store.properties.category})`; }		
+
+	/* Add the link to the individual listing created above. */
+	const link = listing.appendChild(document.createElement('a'));
+	link.className = 'title';
+	link.id = `link-${store.properties.id}`;
+	link.href = `https://www.google.com/maps/place/`; 
+	link.href += `${store.properties.address}+${store.properties.city}`;
+	link.href += `+${store.properties.state}+${store.properties.postalCode}`;
+	link.target = '_new';	
+	link.innerHTML = `${store.properties.address} &middot; ${store.properties.city} ${store.properties.state}`;
+
+	}}; /* end of buildLocation List function */
+
 	function buildLocationList2(stores, num) {
 	for (const store of stores.features) {
 	/* Add a new listing section to bottom of the page. */
