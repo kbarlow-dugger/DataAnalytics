@@ -389,7 +389,12 @@ map.on('load', () => {
 		}
 	});
 	
-	buildLocationList3(smparks,"parks");
+	map.addSource('NFL jobs', {
+		'type': 'geojson',
+		'data': smparks
+	});
+
+	buildLocationList3a(smparks,"parks");
 	
 	map.addLayer({
 		'id': 'NFL jobs',
