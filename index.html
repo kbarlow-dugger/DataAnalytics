@@ -201,6 +201,7 @@ center: [-96.581679,39.806862]
 
 map.addControl(new mapboxgl.NavigationControl());
 
+// STANDARD CITY GOVERNMENT
 const food_ct = 1;
 const food = 
 
@@ -219,10 +220,13 @@ food.features.forEach((foodplace, i) => {
 foodplace.properties.id = i;
 });
 
+// FEATURED 
 const best_ct = 2;
 const best = 
 
 {'type': 'FeatureCollection','features': [
+
+{'type': 'Feature','geometry': {'type': 'Point','coordinates': [-81.378448, 40.798946]},'properties': {'name': 'NFL Data Analytics Teams','address': 'https://public.tableau.com/app/profile/kenneth.barlow/viz/2024NFLAnalyticsFanReport/Home', 'city': 'Canton','country': 'United States','postalCode': '','category': 'An analysis of football and business data analytics teams within NFL franchises.', 'state': 'OH'}}, 
 
 {'type': 'Feature','geometry': {'type': 'Point','coordinates': [-84.512016, 39.103119]},'properties': {'name': 'Cincy Insights','phone': '','address': 'https://insights.cincinnati-oh.gov/', 'city': 'Cincinnati', 'country': 'United States','category': 'Office of Performance & Data Analytics - 11 major categories in Data Portal','postalCode': '','state': 'OH'}},
 
@@ -239,16 +243,15 @@ best.features.forEach((bestplace, i) => {
 bestplace.properties.id = i;
 });
 
+// OTHER INDUSTRIES
 const petsvcs_ct = 2;
 const petsvcs = 
 
 {'type': 'FeatureCollection','features': [
 
- {'type': 'Feature','geometry': {'type': 'Point','coordinates': [-81.378448, 40.798946]},'properties': {'name': 'NFL Data Analytics Teams','address': 'https://public.tableau.com/app/profile/kenneth.barlow/viz/2024NFLAnalyticsFanReport/Home', 'city': 'Canton','country': 'United States','postalCode': '','category': 'An analysis of football and business data analytics teams within NFL franchises.', 'state': 'OH'}}, 
+ {'type': 'Feature','geometry': {'type': 'Point','coordinates': [-88.015831, 44.513332]},'properties': {'name': 'Green Bay Packers - Football Analyst Intern','phone': '2023379338','address': '','city': 'Washington','country': 'United States','crossStreet': 'at 34th St NW','postalCode': '','state': 'WI'}},
 
-// {'type': 'Feature','geometry': {'type': 'Point','coordinates': [-77.0672, 38.90516896]},'properties': {'name': 'Franklin D for Dog Spa','phone': '2023379338','address': '3333 M St NW','city': 'Washington','country': 'United States','crossStreet': 'at 34th St NW','postalCode': '20007','state': 'D.C.'}},
-
-// {'type': 'Feature','geometry': {'type': 'Point','coordinates': [-77.002583742142, 38.900041080933]},'properties': {'name': 'DC City Emergency Vet','phone': '2025479338','address': '221 Pennsylvania Ave SE','city': 'Washington','country': 'United States','crossStreet': 'btwn 2nd & 3rd Sts. SE','postalCode': '20003','state': 'D.C.'}},
+ {'type': 'Feature','geometry': {'type': 'Point','coordinates': [ -94.578331, 39.099724]},'properties': {'name': 'Kansas City Chiefs','phone': '2025479338','address': '','city': 'Washington','country': 'United States','category': 'Football Analyst Intern','postalCode': '','state': 'MO'}},
 
 ]};
 
@@ -261,6 +264,7 @@ petsvcs.features.forEach((petsvc, i) => {
 petsvc.properties.id = i;
 });
 
+// COUNTY GOVERNMENTS
 const dogparks_ct = 1;
 const dogparks = 
 
@@ -343,7 +347,7 @@ map.on('load', () => {
 		'visibility': 'visible',
 		},
 		'paint': {
-		'circle-radius': 12,
+		'circle-radius': 8,
 		'circle-color': 'rgba(61,114,196,1)'
 		}
 	});
