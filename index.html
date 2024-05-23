@@ -374,6 +374,7 @@ map.on('load', () => {
 	});
 
 	buildLocationList3(dogparks,"parks");
+	buildLocationList3(smparks,"parks");	
 	
 	map.addLayer({
 		'id': 'county government',
@@ -389,26 +390,6 @@ map.on('load', () => {
 		}
 	});
 	
-	map.addSource('NFL jobs', {
-		'type': 'geojson',
-		'data': smparks
-	});
-
-	buildLocationList3a(smparks,"parks");
-	
-	map.addLayer({
-		'id': 'NFL jobs',
-		'type': 'circle',
-		'source': 'NFL jobs',
-		'layout': {
-		// Make the layer visible by default.
-		'visibility': 'visible',
-		},
-		'paint': {
-		'circle-radius': 12,
-		'circle-color': 'rgba(99,0,0,1)'		
-		}
-	});
 	
 //	map.loadImage(
 //		'https://kbarlow-dugger.github.io/PetFriendlyRoadmap/dugger-icon.png',
