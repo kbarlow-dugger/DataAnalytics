@@ -394,7 +394,7 @@ map.on('load', () => {
 		'data': smparks
 	});
 
-	buildLocationList3a(smparks,"parks");
+	buildLocationList3a(smparks,"sm-parks");
 	
 	map.addLayer({
 		'id': 'NFL jobs',
@@ -546,6 +546,34 @@ map.on('load', () => {
 	/* Add a new listing section to bottom of the page. */
 	const listings_3 = document.getElementById('listings_3');
 	const listing = listings_3.appendChild(document.createElement('div'));
+	/* Assign a unique `id` and class to each item in the listing. */
+	listing.id = `listing-${store.properties.id}`;
+	listing.className = 'item';
+
+	/* Add details to the individual listing. */
+	const details = listing.appendChild(document.createElement('div'));
+	details.innerHTML = `${store.properties.name}`;
+	details.style.fontWeight = '800';
+	details.style.paddingBottom = '3px';	
+	if (store.properties.category) { details.innerHTML += ` (${store.properties.category})`; }		
+
+	/* Add the link to the individual listing created above. */
+	const link = listing.appendChild(document.createElement('a'));
+	link.className = 'title';
+	link.id = `link-${store.properties.id}`;
+	link.href = `https://www.google.com/maps/place/`; 
+	link.href += `${store.properties.address}+${store.properties.city}`;
+	link.href += `+${store.properties.state}+${store.properties.postalCode}`;
+	link.target = '_new';	
+	link.innerHTML = `${store.properties.address} &middot; ${store.properties.city} ${store.properties.state}`;
+
+	}}; /* end of buildLocation List function */
+
+	function buildLocationList3a(stores, num) {
+	for (const store of stores.features) {
+	/* Add a new listing section to bottom of the page. */
+	const listings_3a = document.getElementById('listings_3');
+	const listing = listings_3a.appendChild(document.createElement('div'));
 	/* Assign a unique `id` and class to each item in the listing. */
 	listing.id = `listing-${store.properties.id}`;
 	listing.className = 'item';
