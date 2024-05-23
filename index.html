@@ -389,12 +389,6 @@ map.on('load', () => {
 		}
 	});
 	
-	// Add the County Government Offices 
-	map.addSource('NFL jobs', {
-		'type': 'geojson',
-		'data': smparks
-	});
-
 	buildLocationList3(smparks,"parks");
 	
 	map.addLayer({
