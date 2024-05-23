@@ -266,7 +266,7 @@ const dogparks =
 
 {'type': 'FeatureCollection','features': [
 
-{'type': 'Feature','geometry': {'type': 'Point','coordinates': [-101.378448, 40.798946]},'properties': {'name': 'Dog Park','address': 'https://public.tableau.com/app/profile/kenneth.barlow/viz/2024NFLAnalyticsFanReport/Home', 'city': 'Canton','country': 'United States','postalCode': '','state': 'OH'}}, 
+// {'type': 'Feature','geometry': {'type': 'Point','coordinates': [-101.378448, 40.798946]},'properties': {'name': 'Dog Park','address': 'https://public.tableau.com/app/profile/kenneth.barlow/viz/2024NFLAnalyticsFanReport/Home', 'city': 'Canton','country': 'United States','postalCode': '','state': 'OH'}}, 
 
 ]};
 
@@ -278,25 +278,6 @@ const dogparks =
 dogparks.features.forEach((dogpark, i) => {
 dogpark.properties.id = i;
 });
- 
-const smparks_ct = 2;
-const smparks = 
-
-{'type': 'FeatureCollection','features': [
-
-{'type': 'Feature','geometry': {'type': 'Point','coordinates': [-91.378448, 40.798946]},'properties': {'name': 'Small Park','address': 'https://public.tableau.com/app/profile/kenneth.barlow/viz/2024NFLAnalyticsFanReport/Home', 'city': 'Canton','country': 'United States','postalCode': '','state': 'OH'}}, 
-
-]};
-
-/**
-* Assign a unique id to each store. You'll use this `id`
-* later to associate each point on the map with a listing
-* in the sidebar.
-*/
-smparks.features.forEach((smpark, i) => {
-smpark.properties.id = i;
-});
- 
  
 // Wait until the map has finished loading.
 map.on('load', () => {
@@ -374,7 +355,6 @@ map.on('load', () => {
 	});
 
 	buildLocationList3(dogparks,"parks");
-	buildLocationList3(smparks,"parks");	
 	
 	map.addLayer({
 		'id': 'county government',
