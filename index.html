@@ -201,14 +201,10 @@ center: [-96.581679,39.806862]
 
 map.addControl(new mapboxgl.NavigationControl());
 
-const food_ct = 3;
+const food_ct = 1;
 const food = 
 
 {'type': 'FeatureCollection','features': [
-
-{'type': 'Feature','geometry': {'type': 'Point','coordinates': [-84.512016, 39.103119]},'properties': {'name': 'Cincy Insights','phone': '','address': 'https://insights.cincinnati-oh.gov/', 'city': 'Cincinnati', 'country': 'United States','category': 'Office of Performance & Data Analytics - 11 major categories in Data Portal','postalCode': '','state': 'OH'}},
-
-{'type': 'Feature','geometry': {'type': 'Point','coordinates': [-83.926453, 35.964668]},'properties': {'name': 'TN Municipal Benchmark Report','phone': '','address': 'https://public.tableau.com/app/profile/kenneth.barlow/viz/TNMuniBenchmarkReport/HOME', 'city': 'University of Tennesse-Knoxville','country': 'United States','category': 'A data viz that I produced showing how city benchmark data can be presented more effectively using Tableau.','postalCode': '','state': 'TN'}},
 
  {'type': 'Feature','geometry': {'type': 'Point','coordinates': [-121.275604, 37.961632]},'properties': {'name': 'City of Stockton OPDA','phone': '2023879338','address': 'https://data.stocktonca.gov','city': 'Stockton','country': 'United States','category': 'Promote more than 11 datasets. Best feature is a one-page strategic plan w/ metrics.','postalCode': '','state': 'CA' }}, 
 
@@ -223,7 +219,7 @@ food.features.forEach((foodplace, i) => {
 foodplace.properties.id = i;
 });
 
-const best_ct = 3;
+const best_ct = 2;
 const best = 
 
 {'type': 'FeatureCollection','features': [
@@ -231,8 +227,6 @@ const best =
 {'type': 'Feature','geometry': {'type': 'Point','coordinates': [-84.512016, 39.103119]},'properties': {'name': 'Cincy Insights','phone': '','address': 'https://insights.cincinnati-oh.gov/', 'city': 'Cincinnati', 'country': 'United States','category': 'Office of Performance & Data Analytics - 11 major categories in Data Portal','postalCode': '','state': 'OH'}},
 
 {'type': 'Feature','geometry': {'type': 'Point','coordinates': [-83.926453, 35.964668]},'properties': {'name': 'TN Municipal Benchmark Report','phone': '','address': 'https://public.tableau.com/app/profile/kenneth.barlow/viz/TNMuniBenchmarkReport/HOME', 'city': 'University of Tennesse-Knoxville','country': 'United States','category': 'A data viz that I produced showing how city benchmark data can be presented more effectively using Tableau.','postalCode': '','state': 'TN'}},
-
- {'type': 'Feature','geometry': {'type': 'Point','coordinates': [-121.275604, 37.961632]},'properties': {'name': 'City of Stockton OPDA','phone': '2023879338','address': 'https://data.stocktonca.gov','city': 'Stockton','country': 'United States','category': 'Promote more than 11 datasets. Best feature is a one-page strategic plan w/ metrics.','postalCode': '','state': 'CA' }}, 
 
 ]};
 
