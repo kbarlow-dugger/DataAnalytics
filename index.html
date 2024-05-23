@@ -279,6 +279,25 @@ dogparks.features.forEach((dogpark, i) => {
 dogpark.properties.id = i;
 });
  
+const smparks_ct = 2;
+const smparks = 
+
+{'type': 'FeatureCollection','features': [
+
+// {'type': 'Feature','geometry': {'type': 'Point','coordinates': [-91.378448, 40.798946]},'properties': {'name': 'NFL Data Analytics Teams','address': 'https://public.tableau.com/app/profile/kenneth.barlow/viz/2024NFLAnalyticsFanReport/Home', 'city': 'Canton','country': 'United States','postalCode': '','state': 'OH'}}, 
+
+]};
+
+/**
+* Assign a unique id to each store. You'll use this `id`
+* later to associate each point on the map with a listing
+* in the sidebar.
+*/
+smparks.features.forEach((smpark, i) => {
+smpark.properties.id = i;
+});
+ 
+ 
 // Wait until the map has finished loading.
 map.on('load', () => {
 
@@ -355,6 +374,28 @@ map.on('load', () => {
 	});
 
 	buildLocationList3(dogparks,"parks");
+	
+	map.addLayer({
+		'id': 'county government',
+		'type': 'circle',
+		'source': 'county government',
+		'layout': {
+		// Make the layer visible by default.
+		'visibility': 'visible',
+		},
+		'paint': {
+		'circle-radius': 12,
+		'circle-color': 'rgba(127,0,0,1)'		
+		}
+	});
+	
+	// Add the County Government Offices 
+	map.addSource('NFL jobs', {
+		'type': 'geojson',
+		'data': smparks
+	});
+
+	buildLocationList3(smparks,"parks");
 	
 	map.addLayer({
 		'id': 'county government',
